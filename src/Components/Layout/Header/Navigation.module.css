@@ -1,0 +1,14 @@
+
+.navlist{text-align: center;}
+.navlist ul{ display: flex; justify-content: space-between;}
+
+.navlist li{list-style-type: none;}
+
+.navlist ul li a{ text-decoration: none; color: white; font-family: "titillium"; font-size: 18px;}
+
+.navlist ul li a:hover{color: #E4002B;}
+
+@media screen and (max-width: 600px) {
+    .navlist{display: none;}
+
+}

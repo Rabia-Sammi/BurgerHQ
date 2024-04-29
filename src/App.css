@@ -1,38 +1,17 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.container{font-family: "titillium"; width: 1250px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+@media screen and (max-width: 576px) { .container{font-family: "titillium"; width: 100%; }}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+.card-grid {display: grid;  grid-template-columns: repeat(3, 1fr);}
+/* .card{height: 100%; border-radius: 6px; padding: 20px; margin: 10px; background-color: #1C1816; display: grid;}
+.card img{ width: 100%;}
+.card .cardBody{height: 100%;}
+.card .cardFooter{display: flex; justify-content: space-between; margin: 20px 0px;}
+.card .cardFooter h2{margin: 0px;} */
+
+.burger-pg{justify-content: center;display: flex; margin-bottom: 50px;}
+h1,h2{color: white;}

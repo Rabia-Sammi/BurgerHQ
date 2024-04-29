@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import IndexPage from './Pages/IndexPage/IndexPage';
+import BurgerPage from './Pages/BurgerPage';
+import CartContext from './store/cart-context';
+import Layout from './Components/Layout/Layout';
+import axios, { AxiosError, AxiosInstance } from 'axios'
+
+import React, { Suspense, useEffect } from 'react';
+import { Route, Routes, Navigate,BrowserRouter } from 'react-router-dom';
+
+
+
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Suspense>
+    <Layout> 
+      <Routes>
+      <Route path="/" element={<Navigate replace to="/home" />} />
+      <Route path="/home" element={<IndexPage />} />
+      <Route path="/burgers" element={<BurgerPage />} />
+      </Routes>
+    </Layout>
+    </Suspense>
+
+    
+    // <Layout> 
+    //   <IndexPage/>
+    //   {/* <BurgerPage/> */}
+    // </Layout>
   );
 }
 
