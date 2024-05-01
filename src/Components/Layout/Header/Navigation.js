@@ -1,12 +1,15 @@
 import classes from './Navigation.module.css';
+// import {Link} from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Navigation=()=>{
 
     return(
         <div className={classes.navlist}>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Burgers</a></li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/burgers'>Burgers</Link></li>
                 <li><a href="#">Pizza</a></li>
                 <li><a href="#">Desi Food</a></li>
                 <li><a href="#">Side Orders</a></li>

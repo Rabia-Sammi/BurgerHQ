@@ -1,11 +1,11 @@
-import classes from './RedBtn.module.css';
+import classes from './RedBtn.css';
 
 const RedBtn=(props)=>{
 
     return(
 
 <button
-      className={classes.button}
+      className="redBtn"
       type={props.type || 'button'}
       onClick={props.onClick}
     >

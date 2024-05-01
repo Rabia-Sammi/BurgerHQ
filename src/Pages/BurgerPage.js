@@ -14,109 +14,37 @@ const BurgerPage = () => {
 
     const [burgers, setBurgers] = useState([]);
 
-    const fetchBurgers = useCallback(async () => {
+    const fetchBurgers = useCallback ( async () => {
 
         try {
             const response = await axios.request('https://my-burger-api.herokuapp.com/burgers');
             setBurgers(response.data);
-            console.log(burgers);
+            }
+        catch (error) { console.log("ERROR"); }
 
 
-        }
-        catch (error) { console.log(error); }
+        const pricedarray=[...burgers];
+        for(const item of pricedarray) {
+            item.price = Math.floor(Math.random() * 1000) + 100;
+       }
+        setBurgers(pricedarray);
+        console.log(burgers);
+    }
+    );
+
+    useEffect(() => {
+        fetchBurgers();
     }, []);
 
 
 
-
-    //     async () => {
-
-
-
-    //     try {
-    //         const response = await fetch('https://sapapi.scrubskp.com/api/Solution')
-    //         if (!response.ok) {
-    //             throw new Error('Something went wrong!');
-    //         }
-    //         // console.log(response);
-    //         const data = await response.json();
-
-    //         const loadedSolutions = [];
-    //         for (const key in data) {
-    //             let cats = data[key].categories.map(c => {
-    //                 return c.name
-    //             });
-    //             loadedSolutions.push({
-    //                 id: data[key].id,
-    //                 icon: data[key].iconUrl,
-    //                 name: data[key].name,
-    //                 description: data[key].description,
-    //                 category: cats[0]
-    //             });
-    //         }
-
-    //         setfetchedSolutions(loadedSolutions);
-    //     }
-    //     catch (error) {
-    //         console.log("ERROR");
-    //         // setError(error.message);
-    //     }
-    //     // setIsLoading(false);
-    // }, []);
-    useEffect(() => {
-        fetchBurgers();
-    }, [fetchBurgers]);
-
-
-
-
-
-
-
-    // useEffect(() => {
-    //     (async () => {
-    //     try {
-    //         const response = await axios.request('https://my-burger-api.herokuapp.com/burgers');
-    //         setBurgers(response);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }})()
-    //      }, [])
-
-
-
-
-
-
-
-
-
-    // const itemList = ITEMS.map((item) =>
-
-    //     <div className="card">
-    //         <img src={img} alt="" />
-    //         <div className="cardBody">
-    //             <h2>{item.name}</h2>
-
-    //         </div>
-    //         <div className="cardFooter">
-    //             <h2>{item.price}</h2>
-    //             <RedBtn>Add to Bucket</RedBtn>
-    //         </div>
-    //     </div>
-
-    // ); 
-
-    // console.log("ccccccccccc" + burgers[1].name);
-
     const displayItems = burgers.map( (item) => 
         
         // for(const key in burgers)
-            <Card name={item.name} img={burgerImg} des={item.description}></Card>
+            <Card name={item.name} img={burgerImg} des={item.description} price={item.price}></Card>
         );      
     
 
-    console.log(burgers);
     return (
         <div className="burger-pg">
             <div className="container">

@@ -1,5 +1,5 @@
 
-import classes from './Header.module.css';
+import classes from './Header.css';
 import '../../../App.css';
 import React from 'react';
 import Logo from './logo.jpg';
@@ -15,14 +15,14 @@ import { faBitbucket} from '@fortawesome/free-brands-svg-icons';
 
 const Header = (props) => {
     return (
-        <div className={classes.header}>
+        <div className="header">
             <div className='container'>
-                <div className= {classes.container} >
-                <img className={classes.logo} src={Logo} alt="" ></img>
+                <div className= "Hcontainer">
+                <img className="logo" src={Logo} alt="" ></img>
                 <Navigation/>
                 
-                <div className={classes.button}>
-                <button className={classes.cartBtn} onClick={props.showCart}> <FontAwesomeIcon icon={faBitbucket} /> </button>
+                <div className="button">
+                <button className="cartBtn" onClick={props.showCart}> <FontAwesomeIcon icon={faBitbucket} /> </button>
                 <RedBtn>Register/Sign In</RedBtn>
                 </div>
             </div>

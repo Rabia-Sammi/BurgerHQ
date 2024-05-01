@@ -1,4 +1,5 @@
 import classes from './Card.css';
+import RedBtn from "../../UI/RedBtn";
 
 
 
@@ -13,9 +14,9 @@ const Card = (props) => {
                 <h2>{props.name}</h2>
                 <p>{props.des}</p>
             </div>
-            <div className={classes.cardFooter}>
-                <h2>RS 250</h2>
-                {/* <RedBtn>Add to Bucket</RedBtn>                             */}
+            <div className="cardFooter">
+                <h2>Rs {props.price}</h2>
+                <RedBtn>Add to Bucket</RedBtn>                            
             </div>
         </div>
     );
